@@ -1,16 +1,16 @@
 %define         _state          stable
 %define         orgname         smokeqt
-%define         qtver           4.7.4
+%define         qtver           4.8.0
 
 Summary:	smokeqt - A SMOKE library
 Summary(pl.UTF-8):	smokeqt - Biblioteka SMOKE
-Name:		smokeqt
-Version:	4.7.3
+Name:		kde4-smokeqt
+Version:	4.8.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	24331c3cf0a733ba7bbef3d9eab92d80
+# Source0-md5:	7743457909c5e003ab5da3f6fd8d2a0d
 URL:		http://www.kde.org/
 BuildRequires:	cmake
 BuildRequires:	kde4-kdelibs-devel >= %{version}
@@ -36,8 +36,9 @@ BuildRequires:	QtWebKit-devel >= %{qtver}
 BuildRequires:	QtXml-devel >= %{qtver}
 BuildRequires:	QtXmlPatterns-devel  >= %{qtver}
 BuildRequires:	qwt-devel
-BuildRequires:	smokegen-devel >= %{version}
+BuildRequires:	kde4-smokegen-devel >= %{version}
 Obsoletes:	kde4-kdebindings-smoke-qt < 4.6.99
+Obsoletes:	smokeqt <= 4.8.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -52,8 +53,9 @@ Summary:	Header files for %{name} library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki %{name}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	smokegen-devel >= %{version}
+Requires:	kde4-smokegen-devel >= %{version}
 Obsoletes:	kde4-kdebindings-smoke-devel < 4.6.99
+Obsoletes:	smokeqt-devel <= 4.8.0
 
 %description devel
 Header files for %{name} library.
@@ -62,7 +64,7 @@ Header files for %{name} library.
 Pliki nagłówkowe biblioteki %{name}.
 
 %prep
-%setup -q
+%setup -q -n %{orgname}-%{version}
 
 %build
 install -d build

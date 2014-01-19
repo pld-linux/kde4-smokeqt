@@ -5,12 +5,12 @@
 Summary:	smokeqt - A SMOKE library
 Summary(pl.UTF-8):	smokeqt - Biblioteka SMOKE
 Name:		kde4-smokeqt
-Version:	4.12.0
+Version:	4.12.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
-# Source0-md5:	e2f0fbbb6d67e29a760eef4871df6ab9
+# Source0-md5:	20cf2a67ea1992a66ebf35e61ecc9717
 URL:		http://www.kde.org/
 BuildRequires:	cmake
 BuildRequires:	kde4-kdelibs-devel >= %{version}

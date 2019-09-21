@@ -6,11 +6,12 @@ Summary:	smokeqt - A SMOKE library
 Summary(pl.UTF-8):	smokeqt - Biblioteka SMOKE
 Name:		kde4-smokeqt
 Version:	4.14.3
-Release:	6
+Release:	7
 License:	GPL v2+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
 # Source0-md5:	0f38f465ccd1f9d878d6b91082069227
+Patch0:		qscintilla.patch
 URL:		http://www.kde.org/
 BuildRequires:	cmake
 BuildRequires:	kde4-kdelibs-devel >= %{version}
@@ -63,6 +64,7 @@ Pliki nagłówkowe biblioteki %{name}.
 
 %prep
 %setup -q -n %{orgname}-%{version}
+%patch0 -p1
 
 %build
 install -d build
